@@ -8,28 +8,25 @@ Metadata is one proposed solution however it lacks a standard as although XML ta
 
 The visual internet as it is today is made up of HTML, which combined a simpler version of SGML and hyperlinks to move between pages. The communication protocol HTTP was also invented around the same time. 
 
-HTML is used to strucuture information. However it presents one main problem, it may suggest a data structure but it does not really represent the data itself. By using CSS, we can abstract this problem further. 
+HTML is used to structure information. However it presents one main problem, it may suggest a data structure but it does not really represent the data itself. By using CSS, we can abstract this problem further. 
 
 HTML standards are important as they allow cross-browser support (in theory). However, it is easier to write invalid HTML. Browsers are forgiving and allow poor HTML to be rendered correctly most of the time though this isn't necessarily a good thing as it promotes poor coding. 
 
-HTML may be the language of the world wide web, but it should not be the language of the internet. 
+>HTML may be the language of the world wide web, but it should not be the language of the internet. 
 
 
 Lecture 2 - XML: eXtensible Markup Language
 ====
-
-
-XML is not a markup language in the same sense as HTML. It is a framework for defining markup languages using the same tools. The collection of <tags> is not fixed. You define the tags to match the data being defined. 
-The commonanlity between XML markup is the way in which the metadata is presented. 
+XML is not a markup language in the same sense as HTML. It is a framework for defining markup languages using the same tools. The collection of tags is not fixed. You define the tags to match the data being defined. 
+The commonality between XML markup is the way in which the metadata is presented. 
 
 There are common libraries and tools for processing XML documents. 
 
-
-XML is designed to separate syntax from semantics by structuring data with tags. Stylesheets then use the structure to provide the semantics. This encourages internationalisation and platform independance. 
+XML is designed to `separate syntax from semantics` by structuring data with tags. Stylesheets then use the structure to provide the semantics. This encourages `internationalisation and platform independence. `
 
 It is however not designed to replace HTML as XML on its own cannot process text. 
 
-Whereas defining a recipe in HTML would require us to create the layout in a markup langauge and add the data, XML allows us to define a datatype. 
+Whereas defining a recipe in HTML would require us to create the layout in a markup language and add the data, XML allows us to define a datatype. 
 
     <recipe>
 
@@ -70,9 +67,56 @@ Whereas defining a recipe in HTML would require us to create the layout in a mar
   
     <related url="#GardenQuiche">Garden Quiche</related>
 
-  This illustrates that the markup tags are used for logical structure. However, to render it, we need a stylesheet to define presentation semantics. 
+  This illustrates that the markup tags are used for logical structure. However, to render it, we need a `stylesheet` to define presentation semantics. 
 
 
-  Defining XML
+XML and Databases
+--
+Whether we use XML or a database to define data types is dependent on the `intended use` of the data. Sometimes features such as `size` can stop XML being the most efficient form of data manipulation.
 
-  CDATA - Not parsed by XML readers. <![CDATA[Skipped by the parser]]
+Conceptual View of XML
+--
+An XML document is an `ordered` and `labelled` tree. 
+
+`Leaf nodes` contain data, usually strings.
+
+`Element nodes` are made of a tag (or type) and a set of attributes. 
+
+Example of XML
+--
+    <?xml version = "1.0"?>
+    <!-- that was a processing instruction -->
+    <!-- and these lines are comments -->
+    
+    <myFirstTag>
+    
+       Some character data
+    
+       <childElement attribute-name="this is an attribute value">
+          Some more character data
+       </childElement>
+    
+       <anEmptyElement></anEmptyElement>
+    
+       <anotherEmptyElement/>
+    
+    </myFirstTag>
+
+Tags always begin 
+
+    <tag_name>
+
+and end
+
+    </tag_name>
+
+with empty elements defined as such:
+
+    <tag_name/>
+
+Defining XML
+---
+
+CDATA - Not parsed by XML readers.
+    
+    <![CDATA[Skipped by the parser]]
