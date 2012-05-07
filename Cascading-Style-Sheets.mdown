@@ -1,11 +1,58 @@
-How do we add semantic content to XML? Cascasding Style Sheets (CSS)
+
+Lecture 3 - Cascasding Style Sheets (CSS)
+==
+>How do we add semantic content to XML? 
+
 
 Without CSS, XML files are rendered very boringly with no visuals other than the raw XML data. By linking XML to a stylesheet, we can make it look pretty.
 
-<?xml-stylesheet type="text/css" href="exs002.css"?> is an XML processing instruction that links a css file to an XML file to add semantic content. This means the model can remain the same while the view alters the way in which the data is processed and displayed to the user. This also reduced the strain at server-side as these changes are rendered and processed by the browser not the server. 
+    <?xml-stylesheet type="text/css" href="exs002.css"?> 
+
+is an XML processing instruction that links a css file to an XML file to add semantic content. This means the model can remain the same while the view alters the way in which the data is processed and displayed to the user. This also reduced the strain at server-side as these changes are rendered and processed by the browser not the server. 
+
+Example
+--
+    <ARTICLE>
+       <HEADLINE>Fredrick the Great meets Bach</HEADLINE>
+       <AUTHOR>Johann Nikolaus Forkel</AUTHOR>
+       <PARA>
+         One evening, just as he was getting his 
+         <INSTRUMENT>flute</INSTRUMENT> ready and his
+         musicians were assembled, an officer brought him a list of
+         the strangers who had arrived.
+       </PARA>
+    </ARTICLE>
 
 CSS Syntax 
-selector {property:value;}
-* is a universal selector (all tags)
+--
+    selector {property:value;}
+`*` is a universal selector (all tags)
 
-TITLE {font-fanily: sans-serif}
+    TITLE {font-fanily: sans-serif}
+
+The above declaration would make anything in `<title>` tags use the `sans-serif` font family.
+
+The following example takes anything in `<INSTRUMENT></INSTRUMENT>` (case-sensitive) tags and changes the `display` property to `inline.` What this means at the moment is irrelevant. 
+
+    INSTRUMENT { display: inline }
+
+This process could be applied throughout any XML document.
+
+    INSTRUMENT { display: inline }
+    ARTICLE, HEADLINE, AUTHOR, PARA { display: block }
+    
+    HEADLINE { font-size: 1.4em; color: darkgreen }
+    AUTHOR { font-style: italic; color: navy }
+    INSTRUMENT { text-transform: uppercase; color: red }
+    
+    ARTICLE, HEADLINE, AUTHOR, PARA { margin: 1em }
+
+This alters a collection of different colours, margins etc… It looks like [this.](http://www.sussex.ac.uk/Users/im74/G5074/examples/exs003.xml)
+
+
+
+
+
+
+
+
