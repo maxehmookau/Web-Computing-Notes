@@ -97,9 +97,45 @@ with empty elements defined as such:
 
     <tag_name/>
 
-Defining XML
+Syntax Rules
+--
+XML documents must have a `unique root element.`
+
+Element names can contain anything but `must not contain spaces.`
+
+Element names are `case-sensitive.`
+
+Tags must match up correctly.
+
+Protected Characters
+--
+Some characters (\&, \<, \>, ', ") are reserved in XML and must be inputted using the HTMl encoded versions. 
+
+Element Attributes
+--
+Attributes describe elements where a child element would be unnecessary.
+    
+    <car doors="3" make="VW">
+	…
+	</car>
+
+Where `doors` and `make` are two attributes of the `car` element.
+
+Deciding when to use attributes is a subtle choice.
+
+Processing Instructions
+--
+Like many languages, XML has processing instructions. Things like declaring the XML version and any linked stylesheets.
+
+    <?target name1="value1" name2="value2" ... ?>
+
+The syntax for declaring the XML version used is
+
+    <?xml version="1.0"?>
+
+CDATA Sections
 ---
 
-CDATA - Not parsed by XML readers.
+CDATA is character data that is ignored by the parser. Elements such as code snippets should be here so that other languages don't confuse the parser. 
     
     <![CDATA[Skipped by the parser]]
