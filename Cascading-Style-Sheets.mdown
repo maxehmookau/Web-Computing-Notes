@@ -1,0 +1,11 @@
+How do we add semantic content to XML? Cascasding Style Sheets (CSS)
+
+Without CSS, XML files are rendered very boringly with no visuals other than the raw XML data. By linking XML to a stylesheet, we can make it look pretty.
+
+<?xml-stylesheet type="text/css" href="exs002.css"?> is an XML processing instruction that links a css file to an XML file to add semantic content. This means the model can remain the same while the view alters the way in which the data is processed and displayed to the user. This also reduced the strain at server-side as these changes are rendered and processed by the browser not the server. 
+
+CSS Syntax 
+selector {property:value;}
+* is a universal selector (all tags)
+
+TITLE {font-fanily: sans-serif}

@@ -1,0 +1,78 @@
+Lecture 1 - Introduction to the Internet
+=========
+
+**Main issue** in internet computing is to allow data to be represented in a flexible and general enough way so that *global consensus no longer becomes priority.*
+
+Metadata is one proposed solution however it lacks a standard as although XML tags exist, there must be a standard for which tag names to use.
+
+
+The visual internet as it is today is made up of HTML, which combined a simpler version of SGML and hyperlinks to move between pages. The communication protocol HTTP was also invented around the same time. 
+
+HTML is used to strucuture information. However it presents one main problem, it may suggest a data structure but it does not really represent the data itself. By using CSS, we can abstract this problem further. 
+
+HTML standards are important as they allow cross-browser support (in theory). However, it is easier to write invalid HTML. Browsers are forgiving and allow poor HTML to be rendered correctly most of the time though this isn't necessarily a good thing as it promotes poor coding. 
+
+HTML may be the language of the world wide web, but it should not be the language of the internet. 
+
+
+Lecture 2 - XML: eXtensible Markup Language
+====
+
+
+XML is not a markup language in the same sense as HTML. It is a framework for defining markup languages using the same tools. The collection of <tags> is not fixed. You define the tags to match the data being defined. 
+The commonanlity between XML markup is the way in which the metadata is presented. 
+
+There are common libraries and tools for processing XML documents. 
+
+
+XML is designed to separate syntax from semantics by structuring data with tags. Stylesheets then use the structure to provide the semantics. This encourages internationalisation and platform independance. 
+
+It is however not designed to replace HTML as XML on its own cannot process text. 
+
+Whereas defining a recipe in HTML would require us to create the layout in a markup langauge and add the data, XML allows us to define a datatype. 
+
+    <recipe>
+
+      <title>Rhubarb Cobbler</title>
+      <author><email>Maggie.Herrick@bbs.mhv.net</email></author>
+      <date>Wed, 14 Jun 95</date>
+
+      <description>
+        Rhubarb Cobbler made with bananas as the main sweetener. It was delicious.     Basically it was
+      </description>
+
+    <ingredients>
+      <item>
+        <amount>2 1/2 cups</amount>
+        <type>diced rhubarb</type>
+      </item>
+      <item>
+        <amount>2 tablespoons</amount>
+        <type>sugar</type>
+      </item>
+      <item>
+        <amount>2</amount>
+        <type>fairly ripe bananas</type>
+      </item>
+      <item>
+        <amount>1/4 teaspoon</amount>
+        <type>cinnamon</type>
+      </item>
+      <item>
+        <amount>dash of</amount>
+        <type>nutmeg</type>
+      </item>
+    </ingredients>
+  
+    <preparation>
+      Combine all and use as cobbler, pie, or crisp.
+    </preparation>
+  
+    <related url="#GardenQuiche">Garden Quiche</related>
+
+  This illustrates that the markup tags are used for logical structure. However, to render it, we need a stylesheet to define presentation semantics. 
+
+
+  Defining XML
+
+  CDATA - Not parsed by XML readers. <![CDATA[Skipped by the parser]]
