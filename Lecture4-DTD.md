@@ -99,4 +99,20 @@ The fields are separated by `//`. Here's an example:
 
 Attributes in DTDs
 --
+>As XML tags can contain attributes, DTDs must be able to define them. This is done as follows:
+
+    <!ATTLIST element_name
+     attribute_name type default_value >
+
+
+
+`Next is attribute types`
+
+
+
+
+
+
+
+
 
