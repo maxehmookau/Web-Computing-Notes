@@ -71,4 +71,32 @@ XML file that conforms to the above `DTD`.
         </PART>
     </BOOK>
 
-`Next Section - External DTD`
+External DTDs
+--
+
+We can link to external DTDs much like CSS files. They can be `private` or `public`. 
+
+Linking to a private DTD is done as follows:
+
+    <!DOCTYPE name SYSTEM "URI">
+
+Where `URI` is the path to a DTD and `name` is the data type being described. 
+
+A public DTD is defined remotely using the following syntax:
+
+    <!DOCTYPE name PUBLIC "FPI" "URL" >
+
+Where FPI is the `formal public identifier` for the DTD. It is made up of several parts:
+
+* `-` or `+` defines whether it is a standard or non-standard DTD.
+* The name of the person responsible for the DTD
+* The type of document and version number
+* 2 character language code
+
+The fields are separated by `//`. Here's an example:
+
+    <!DOCTYPE BOOK PUBLIC "-//Joseph Smith//General Book Version 5.3//EN" "http://www.library.org/book.dtd">
+
+Attributes in DTDs
+--
+
